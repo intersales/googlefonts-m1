@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Intersales_GoogleFonts>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Intersales_GoogleFonts>
+    </modules>
+</config>

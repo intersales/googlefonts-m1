@@ -1,0 +1,15 @@
+{
+    "name":"magento-modules/googlefonts",
+    "type":"magento-module",
+    "description":"Add GoogleWebFont.",
+    "authors":[
+        {
+            "name":"Daniel Rose",
+            "email":"dr@intersales.de",
+            "homepage": "http://www.intersales.de",
+            "role": "developer"
+        }
+    ], "require": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

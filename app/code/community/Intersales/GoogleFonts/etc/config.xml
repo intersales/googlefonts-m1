@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Intersales_GoogleFonts>
+            <version>1.0.0.1</version>
+        </Intersales_GoogleFonts>
+    </modules>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <intersales_googlefonts before="Mage_Adminhtml">Intersales_GoogleFonts_Adminhtml</intersales_googlefonts>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <intersales_googlefonts>
+                    <file>intersales_googlefonts.xml</file>
+                </intersales_googlefonts>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <intersales_googlefonts>
+                    <files>
+                        <default>Intersales_GoogleFonts.csv</default>
+                    </files>
+                </intersales_googlefonts>
+            </modules>
+        </translate>
+    </adminhtml>
+
+    <global>
+        <blocks>
+            <intersales_googlefonts>
+                <class>Intersales_GoogleFonts_Block</class>
+            </intersales_googlefonts>
+        </blocks>
+
+        <helpers>
+            <intersales_googlefonts>
+                <class>Intersales_GoogleFonts_Helper</class>
+            </intersales_googlefonts>
+        </helpers>
+
+        <models>
+            <intersales_googlefonts>
+                <class>Intersales_GoogleFonts_Model</class>
+                <resourceModel>intersales_googlefonts_resource</resourceModel>
+            </intersales_googlefonts>
+            <intersales_googlefonts_resource>
+                <class>Intersales_GoogleFonts_Model_Resource</class>
+                <entities>
+                    <font>
+                        <table>intersales_googlefonts_font</table>
+                    </font>
+                </entities>
+            </intersales_googlefonts_resource>
+        </models>
+
+        <resources>
+            <intersales_googlefonts_setup>
+                <setup>
+                    <module>Intersales_GoogleFonts</module>
+                    <class>Mage_Core_Model_Resource_Setup</class>
+                </setup>
+            </intersales_googlefonts_setup>
+        </resources>
+    </global>
+
+    <frontend>
+        <events>
+            <core_block_abstract_prepare_layout_after>
+                <observers>
+                    <intersales_googlefonts>
+                        <type>singleton</type>
+                        <class>Intersales_GoogleFonts_Model_Observer</class>
+                        <method>includeFont</method>
+                    </intersales_googlefonts>
+                </observers>
+            </core_block_abstract_prepare_layout_after>
+        </events>
+    </frontend>
+</config>
